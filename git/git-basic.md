@@ -81,6 +81,8 @@ b.txt
 
 * `$ git log` 커밋들(사진첩) 상태 보기
 
+* `$ git log --oneline` git 히스토리 짧게 보기
+* 
 * `q` : $(prompt)로 돌아가기
 
 
