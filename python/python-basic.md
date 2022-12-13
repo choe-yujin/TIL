@@ -19,6 +19,25 @@ C언어 =>
 
 -> interpreter 언어
 
+**명령하는 두가지 방법**
+
+1. 대화형 창에서 실행하는 것은 말이라서 터미널 창을 끄면 기록이 남지 않는다.
+
+2. .py 파일을 만들어 그 안에 명령어를 적어 명령하면 글이라서 남는다.
+
+```
+# 터미널창에서 python 입력시 바로 Input >>> Output
+# 대화형
+$ python
+>>> print('hello') # ctrl + z + enter 누르면 $로 변환
+hello
+```
+
+````
+# 기록형
+$ python 파일이름.py
+````
+
 python을 들여다 보면 c언어 기반으로 이루어져 있다.
 
 >Life is Short, You Need Python!
@@ -31,3 +50,45 @@ python을 들여다 보면 c언어 기반으로 이루어져 있다.
 
 Python 버전 확인 `$ python -V` (대문자)
 
+## 파이썬을 설치한다는 것이 무엇을 의미하느냐?
+
+파이썬을 설치하기 전까지는 파이썬 문법을 따르는 코드를 써도 실행이 안 된다.
+
+파이썬의 문법을 따르는 코드를 이해하고 실행할 수 있게 만드는 게 파이썬을 설치한다는 것이다.
+
+## 프로그래밍을 왜 배우느냐?
+
+내가 하고자하는 일은 없는데 배우면 문법을 달달 외우지만 말은 못 하는 것과 같다.
+
+**프로그래밍 언어는 도구다.**
+
+컴퓨터에 무슨 일을 시킬지에 대한 생각을 우선 하자!
+
+ex) `webbrowser.open('링크')`로 아침마다 내가 원하는 URL들을 한꺼번에 켠다!
+
+## 프로그래밍 언어를 잘 한다는 것은?
+
+O / X
+
+- 문법에 맞게 말 하느냐
+
+- 다른 사람이 알아 듣느냐
+
+Good or Bad
+
+- 다른 사람이 읽을 때 쉽게 이해할 수 있는가?
+
+- 반복적으로 코드를 쓰고 있지 않은가? (컴퓨터 자체가 인간이 반복적으로 하기 싫은 일을 시키려 만든건데 코드의 중복되는 부분을 계속 쓰면 너무 비효율적이다.) -> **중복을 캐치**하는 것이 능력이다! -> 조건과 반복을 활용해 **확장성**을 고려, 코드 유지보수를 쉽게 할 수 있다 !
+
+  ```
+  import webbrowser
+  
+  # Bad
+  # webbrowser.open('https://finance.naver.com/item/fchart.nhn?code=005930')
+  # webbrowser.open('https://finance.naver.com/item/main.naver?code=017670')
+  # webbrowser.open('https://finance.naver.com/item/main.naver?code=005380')
+  
+  # Good
+  for x in ['005930','017670','005380']:
+      webbrowser.open('https://finance.naver.com/item/main.naver?code={x}')
+  ```
