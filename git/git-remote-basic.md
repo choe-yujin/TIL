@@ -1,4 +1,4 @@
-# git remote시 주의사항 권장사항
+# git remote
 
 ## WARNING! 주의사항
 1. master 위치, 현재 위치를 잘 확인한다
@@ -27,7 +27,7 @@
 
 	.gitignore 안에 공유되어선 안 될 것들의 목록을 적음
 
-프로젝트에 맞는 .gitignore 파일 생성 
+프로젝트에 맞는 .gitignore 파일 생성하기 위한 URL 
 > https://www.toptal.com/developers/gitignore/
 
 ---
@@ -68,7 +68,7 @@ $ git commit -m 'first commit'
 ​
 # github에서 원격 저장소 직접 생성
 ​
-# 생성한 원격 저장소 등록  (origin 은 별명)
+# 생성한 원격 저장소 등록  (origin 은 별칭)
 $ git remote add origin <URL>
 ​
 # 등록된 저장소 확인
@@ -80,8 +80,7 @@ $ git push origin master
 ---
 ​
 ## 명령어 정리
-​
-1. 리포 초기화 시점에 1회 입력
+​1. 리포 초기화 시점에 1회 입력
 ​
 ```sh
 $ git init 
@@ -92,7 +91,7 @@ $ git init
 ```sh
 # 특정 파일만 add 할 때
 $ git add <filename>
-# 현재 폴더 전체를 add 할 때
+# 현재 폴더 내 수정된 파일 전체를 add 할 때
 $ git add .
 ```
 ​
@@ -117,8 +116,8 @@ $ git log --oneline
 ```
 ​
 5. github 에 원격 저장소 생성하기 (github site에서 `New Repository`)
-  
-6. 원격 저장소(remote repo) 추가하기
+
+   6.원격 저장소(remote repo) 추가하기
 ​
 ```sh
 $ git remote add origin <URL>
@@ -164,4 +163,3 @@ $ git pull origin master
 |작업|`add`, `commit`|
 |작업 종료|`$ git push origin master`|
 |다른 컴퓨터에서 반복|`$ git pull origin master`|
-접기
