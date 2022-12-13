@@ -93,7 +93,3 @@ $ rm a.txt
 $ git restore a.txt
 $ git add a.txt => git commit -m 'add msg'
 ```
-
-
-
-4.Commits
