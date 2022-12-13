@@ -28,7 +28,7 @@
     3. 스프
     4. 면
     5. 냠냠
-  
+
 ---
 
 ## 인라인 강조
@@ -65,7 +65,7 @@
 |`~`|Home. 내가 로그인한 계정명의 폴더|`~/cli`|
 |`$`|prompt : 터미널에서 명령어를 받을 준비가 됐음을 의미|$|
 |`/`|최상단(Root)폴더 상징 기호|$ `cd /`|
-|`mv`|파일을 해당 폴더로 옮기겠다|$ `mv makrdown-basic.md markdown`|
+|`mv`|파일을 해당 폴더로 옮기겠다|$ `mv markdown-basic.md markdown`|
 |enter|행 바꿈|enter enter|
 
 ### 코드
