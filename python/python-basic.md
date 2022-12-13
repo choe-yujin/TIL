@@ -92,3 +92,5 @@ Good or Bad
   for x in ['005930','017670','005380']:
       webbrowser.open('https://finance.naver.com/item/main.naver?code={x}')
   ```
+
+> 참고할만한 파이썬 책 링크 https://wikidocs.net/book/1
