@@ -1,8 +1,10 @@
-- 왜 bash에서는 ls cmd에서는 dir? 명령어가 다를까?
 
-이를 설명하려면 컴퓨터의 가계도를 봐야된다.
 
 **OS(Operating System - 운영 체제)**
+
+- 왜 bash에서는 ls cmd에서는 dir? 명령어가 다를까?
+
+​		이를 설명하려면 컴퓨터의 가계도를 봐야된다.
 
 | Unix                                                         | Window     |
 | ------------------------------------------------------------ | ---------- |
@@ -14,9 +16,7 @@
 | Unix 유료는 대표적으로 MacOS, iOS                            | Windows 10 |
 |                                                              | Windows 11 |
 
-Window세상의 단어는 dir
-
-Unix세상의 단어는 ls
+Window세상의 단어는 dir. Unix세상의 단어는 ls
 
 
 

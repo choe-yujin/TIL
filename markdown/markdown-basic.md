@@ -1,7 +1,5 @@
 # markdown 기초 문법
 
-엔터는 엔터 두번
-
 ## 리스트
 
 ### 순서가 있는 리스트(ordered list)
@@ -68,6 +66,7 @@
 |`$`|prompt : 터미널에서 명령어를 받을 준비가 됐음을 의미|$|
 |`/`|최상단(Root)폴더 상징 기호|$ `cd /`|
 |`mv`|파일을 해당 폴더로 옮기겠다|$ `mv makrdown-basic.md markdown`|
+|enter|행 바꿈|enter enter|
 
 ### 코드
 
