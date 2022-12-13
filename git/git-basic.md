@@ -16,7 +16,7 @@
 
 
 - 기술 생산자와 기술 활용자가 같지 않은 시대.
-오픈소스 활용시 모든 것을 바닥부터 만들지 않아도 된다.
+  오픈소스 활용시 모든 것을 바닥부터 만들지 않아도 된다.
 
     *-> Open Source를 누리자!*
 
@@ -38,13 +38,13 @@ $ git config --global user.name "내이름"
 1. 폴더/dir
    
 2. `$ git init` -> 버전 관리 시작-> .git/ 
- 
+
      해당 폴더가 Repository로 진화됨
 
 3. `$ rm -r .git/` -> 버전 전부 삭제 -> .git/삭제
 
     해당 Repository가 폴더로 됨
-   
+
 ## git의 흐름 이해
 
 >git의 흐름을 광고촬영장으로 비유하여 시각화 해보자
@@ -56,7 +56,7 @@ a.txt
 
 b.txt
 
-  
+
 * `$ git add c.txt` Stage에 올림
 
 * `$ git add .` 현재 디렉토리 기준 변경사항 있는 것만 한번에 스테이징 
@@ -72,7 +72,7 @@ b.txt
 
 변경 사항 : add 이후에 또 변경한 것
 
-### 3.Commit
+### 3.Commits
 (사진첩)
 
 * `$ git restore c.txt` 사진첩에 올라간 사진 기준으로 복구
@@ -91,4 +91,8 @@ $ rm a.txt
 $ git restore a.txt
 $ git add a.txt => git commit -m 'add msg'
 ```
+
+
+
+##
 
