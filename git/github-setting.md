@@ -13,8 +13,8 @@
    `git remote add origin https://github.com/choe-yujin/TIL.git`
 
    = git님 remote원격저장소를 add추가할게요. (origin은 깃허브 repo 주소의 별명)깃허브 repo주소값에.
-
-​			`git remote add`는 고정되는 명령어. 뒤에 별칭과 주소는 바뀔 수 있다.
+  
+   `git remote add`는 고정되는 명령어. 뒤에 별칭과 주소는 바뀔 수 있다.
 
 4. 동기화 
 
