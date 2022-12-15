@@ -60,6 +60,7 @@
 |`cd ..`|상위 폴더로 이동|$ `cd ..`|
 |`cd . `|지금 여기|$ `cd .`|
 |`code .`|vscode로 지금 있는 폴더 열기|$ `code .`|
+|`start .`|현재 위치 탐색기 열기|$ `start .`|
 |`ctrl + l` 또는 `clear`|터미널 정리|$ `clear`|
 |`ctrl + c`|취소. prompt($)상태로 변환|`ctrl + c`|
 |`~`|Home. 내가 로그인한 계정명의 폴더|`~/cli`|
