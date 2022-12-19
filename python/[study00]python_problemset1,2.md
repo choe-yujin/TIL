@@ -76,6 +76,35 @@
 
 
 
+**강사님 접근 방법**
+
+```python
+# enumerate가 요소를 함께 출력한다는 것을 활용
+new_name = ''
+for idx, name in enumerate(names, start=1):  #idx와 요소가 같이 나오는 enumerate 활용
+    if idx != 1 and idx != len(names):
+        new_name += f'{name[0]}. '
+    else:
+        new_name += f'{name[0]. '
+print(new_name)
+```
+
+- enumerate가 요소를 함께 출력한다는 것을 활용
+- .을 붙일때 f-string 활용
+
+```python
+# 선생님코드 list는 mutable하다는 것을 활용
+for idx in range(1, len(names)- 1):
+    names[idx] = f'{names[idx][0]}. '
+    
+print(' '.join(names))
+```
+
+- 반복문을 전체 다 순회하지 않고 처음, 끝을 제외하고
+- list는 mutable하다는 것을 활용
+
+
+
 **민정님 접근 방법**
 
 ```python
@@ -96,6 +125,7 @@ print(short_name)
 **※ 포인트**
 
 - for문 range를 잘 활용하면 index를 셀 전역변수를 안 써도 된다.
+- `enumerate()` 를 활용하면 idx와 요소를 함께 활용할 수 있다.
 - if문도 조건이 아닌 `if - in` 을 활용해서 index 범위를 줄일 수 있다. 
 
 
@@ -246,6 +276,26 @@ for num in numbers:
 
 3. 처음엔 `range(2, num)` 까지 했다가 해당 수의 반 이상은 해당수로 나눠봤자 실수가 나오므로 loop는 `range(2, num // 2)` 2로 나눈 몫 즉, 반으로 제한했다.
 
+   
+
+**강사님 접근 방법**
+
+```python
+numbers = [26, 39, 51, 53, 57, 79, 85, 121, 38239853, 104831, 909091]
+
+for num in numbers:
+    for d_num in range(2, int(num**0.5)):
+        if num % d_num == 0:
+            print(f'{num} 는 소수가 아닙니다. {d_num} 는 {num} 의 인수입니다.')
+            break  # 하나만 나와도 소수가 아니니까 break
+    else:
+        print(f'{num} 는 소수입니다.')
+```
+
+- 체크할 범위를 제곱근으로 정했다.
+
+
+
 **현수님, 민정님 접근 방법**
 
 ```python
@@ -269,6 +319,7 @@ for number in numbers:
 
 **※ 포인트**
 
+- 두 수가 묶이니 loop 범위를 제곱근으로 정했다.
 - bool도 형변환해서 활용해볼 수 있다.
 - 이 문제는 인수가 하나라도 나오면 거기서 loop를 끝내고 소수가 아니라고 판별한다. 모든 인수를 구하는 로직을 짜보고 싶다는 생각을 했다. 
 
