@@ -1,6 +1,6 @@
 # 파이썬 코드 리뷰 스터디
 
-**22년 12월 18일(일)**  **14시 ~ 18시**
+**22년 12월 18일(일)**  **14시 ~ 18시 / 12월 20일(화) 추가 코드**
 
 장소 : 종로 시간공방 스터디룸 F3
 
@@ -323,6 +323,28 @@ for number in numbers:
 - bool도 형변환해서 활용해볼 수 있다.
 - 이 문제는 인수가 하나라도 나오면 거기서 loop를 끝내고 소수가 아니라고 판별한다. 모든 인수를 구하는 로직을 짜보고 싶다는 생각을 했다. 
 
+```python
+# 소수 판별 및 인수 리스트 구하기 / 22년 12월 20일 추가
+numbers = [26, 39, 51, 53, 57, 79, 85,21353]
+
+for num in numbers:
+    insu_list = [num]
+    for d_num in range(2, num // 2 + 2): #2때문에 +2 함. if d_num < min(insu_list): for문에 if넣을 수 있나?
+        x, y = divmod(num, d_num)  # 몫, 나머지
+        if d_num > min(insu_list): # 나눌 인수가 이미 넣어둔 인수보다 커지면
+             insu_list.append(1)
+             break
+        if y == 0:
+            insu_list.append(x)
+    if len(insu_list) == 1:
+        print(f'{num}은 소수입니다')
+    else:
+        insu_list.sort()
+        print(f'{num}의 인수리스트는 {insu_list}입니다') # .sort()를 그대로 프린트 하면 왜 result가 None?
+```
+
+
+
 ## 6.로또
 
 **나의 접근 방법**
@@ -419,3 +441,20 @@ else:
 - set이 중복값을 담을 수 없다는 것을 활용. 차집합, 교집합 리스트를 따로 만든게 신선했다.
 - set자료형을 활용하니 for문을 따로 만들 필요가 없었다.
 - if문조차도 줄일 수 없을까 이야기하다가 dictionary의 key, value를 활용해보는 것은 어떨까 아이디어가 나왔는데 5개가 겹칠 경우 2등과 3등이 존재하므로 막혔다. dictionary를 잘 활용하면 불필요하게 긴 if문이나 switch문을 안 써도 될 것 같다.
+
+```python
+# dict 활용해서 짜봄/ 22년 12월 20일 추가
+my_numbers = [1, 2, 3, 4, 5, 45]
+jackpot_numbers = [1, 2, 3, 4, 5, 6]
+bonus_number = 45
+chk_dic = {0:'1등', 1:'3등', 2:'4등', 3:'5등', 4:'꽝', 5:'꽝', 6:'꽝'}
+
+no_nums = list(set(my_numbers) - set(jackpot_numbers))  # set은 순서가 없기에 idx로 값 접근이 안 되는거 같다. idx로 값 접근 위해 list로 형변환 함
+cnt = len(no_nums)
+
+if cnt == 1 and no_nums[0] == bonus_number:
+    print('2등')
+else:
+    print(chk_dic[cnt])
+```
+
