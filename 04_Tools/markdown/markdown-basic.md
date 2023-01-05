@@ -68,6 +68,7 @@
 |`/`|최상단(Root)폴더 상징 기호|$ `cd /`|
 |`mv`|파일을 해당 폴더로 옮기겠다|$ `mv markdown-basic.md markdown`|
 |enter|행 바꿈|enter enter|
+|`-`|뒤로 가기|$ `cd -`|
 
 ### 코드
 
