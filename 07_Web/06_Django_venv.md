@@ -1,6 +1,6 @@
 # Django 독립개발환경 프로젝트
 
-23년 1월 9일(월)
+23년 1월 9일(월), 10일(화)
 
 
 
@@ -221,3 +221,129 @@ search는 GET이 말이 됨. 검색해서 진짜 DB에서 get하는거니까.
 
 **DB에 변경이 일어나면 POST, 안 일어나면 GET**
 
+
+
+### 유효성 검사 후 데이터 받기
+
+#### forms.py
+
+```python
+from django import forms
+from .models import Article
+
+class ArticleForm(forms.ModelForm):
+    # 1.유효성검사(Validation)
+    # 2.HTML 안에 <input> 태그 여러개 만들기 귀찮다
+    # 3.저장시 request.POST에서 하나하나 꺼내기 귀찮다
+    
+    #title은 최소 2글자, 최대100글자야
+    title = forms.CharField(min_length=2, max_length=100)
+    
+    class Meta:
+        model = Article
+        fields = ('title', 'content',)  # 리스트도 가능
+```
+
+Q.forms.py 에서 유효성검사 코드 추가하니 사용자 UI에서부터 이미 걸러버리니까 views.py에서 .is_valid()가 else일 경우가 없는거 아닌가? 
+
+A. 1차 방어막이다. F12 개발자환경에서 유효성검사 없이 그냥 데이터를 넘겨버릴 수도 있으니까. views.py에서도 else 넣자.
+
+title = 이라고 적은건 Article의 컬럼명 중 title이 있으니까.
+
+
+
+#### views.py
+
+```python
+from .forms import ArticleForm
+
+# 글 쓰기 화면(Create)
+def new(request):
+    article_form = ArticleForm()
+    context = {'article_form':article_form, }
+    return render(request, 'blog/form_new.html', context)
+
+# 글 실제 저장
+def create(request):
+    article_form = ArticleForm(request.POST)
+    #validation 메소드
+    if article_form.is_valid():
+        # 유효하면 저장 후 detail페이지로
+        article = article_form.save()
+        return redirect('blog:detail', article.pk)
+    else: # 유효하지 않으면 다시 new페이지로
+        context = {'article_form': article_form,}
+        return render(request, 'blog/form_new.html', context)
+```
+
+else경우 에러 메세지까지 포매팅 되어 사용자UI에 출력된다.
+
+
+
+#### # new와 create 함수 합치기(글쓰기화면/저장/반려)
+GET -> /blog/create/ -> if GET 글쓰기화면
+
+POST -> /blog/create/ -> elif POST 유효성검사 T저장/F반려
+
+```python
+def create(request):
+    if request.method == 'POST':
+        article_form = ArticleForm(request.POST)
+        if article_form.is_valid():
+            article = article_form.save()
+            return redirect('blog:detail', article.pk)
+        
+    elif request.method == 'GET':
+        article_form = ArticleForm()
+        
+    context = {'article_form':article_form,}
+    return render(request, 'blog/form_new.html', context)
+```
+
+
+
+#### form_new.html
+
+```django
+
+{% include 'base.html' %}
+
+{% block content %}
+<h1>New Article</h1>
+<p>ModelForm 통해서 만들어짐</p>
+<form action=" {% url 'blog:create' %}" method="POST">
+    {% csrf_token %}
+    {% comment %} 마법같이 input태그들이 짜잔 나오면 좋겠다 {% endcomment %}
+    {{article_form.as_p}}
+    <button>제출</button>
+</form>
+{% endblock content %}
+```
+
+views.py의 new함수에 ArticleForm()객체를 넘겨줬으니까 {{article_form}} 으로 자동으로 데이터만큼 input만들어줌
+
+여기에 `.as_p` input데이터들에 p태그 자동으로 붙여서 만들어 줌
+
+
+
+### Status 상태코드 잘 보내주기 404error
+
+```python
+from django.shortcuts import render, redirect, get_object_or_404
+
+# detail, edit, update, delete
+def detail(request, article_pk):
+    article = get_object_or_404(Article, pk=article_pk)
+    context = {'article':article,}
+    return render(request, 'blog/detail.html', context)
+```
+
+없는걸 사용자가 요청했으니 404 에러를 내줘야한다.
+
+
+
+
+
+## References
+
+> Meta클래스 https://docs.djangoproject.com/en/3.2/topics/forms/modelforms/#overriding-the-default-fields
