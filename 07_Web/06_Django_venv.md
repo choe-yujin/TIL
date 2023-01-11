@@ -26,7 +26,7 @@ python 3.10은 Global Python (어느 위치에 있던간에 이게 잡힌다.)
 
 
 
-![image-20230109093223025](C:\Users\a\AppData\Roaming\Typora\typora-user-images\image-20230109093223025.png)
+![image-20230109093223025](https://github.com/choe-yujin/TIL/blob/master/07_Web/06_Django_venv.assets/image-20230109093223025.png)
 
 장점 : 모든 프로젝트에서 필요한걸 한 곳에 몽땅 넣어두면 어떤 프로젝트에서 필요한지 모르니 각 프로젝트가 필요한 패키지는 각 프로젝트가 들고있으면 된다. 협업, 배포시 소스코드와 노란색 재료목록을 같이 보내준다
 
@@ -67,7 +67,7 @@ python 3.10은 Global Python (어느 위치에 있던간에 이게 잡힌다.)
 
 `python manage.py startapp blog`
 
-![image-20230109103237574](C:\Users\a\TIL\07_Web\06_Django_venv.assets\image-20230109103237574.png)
+![image-20230109103237574](https://github.com/choe-yujin/TIL/blob/master/07_Web/06_Django_venv.assets/image-20230109103237574.png)
 
 ### setting.py 
 

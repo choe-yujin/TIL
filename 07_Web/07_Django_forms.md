@@ -155,7 +155,7 @@ post만 받겠다.
 
 
 
-![image-20230111143114013](C:\Users\a\TIL\07_Web\07_Django_forms.assets\image-20230111143114013.png)
+![image-20230111143114013](https://github.com/choe-yujin/TIL/blob/master/07_Web/07_Django_forms.assets/image-20230111143114013.png)
 
 
 
@@ -163,13 +163,13 @@ post만 받겠다.
 
 ### form.html(new/edit)
 
-![image-20230111144516182](C:\Users\a\TIL\07_Web\07_Django_forms.assets\image-20230111144516182.png)
+![image-20230111144516182](https://github.com/choe-yujin/TIL/blob/master/07_Web/07_Django_forms.assets/image-20230111144516182.png)
 
 form action="" 비워두면 현재의 url이 기본세팅됨
 
 new.html과 edit.html은 form action주소가 어차피 자기 자신의 주소니까 form action 비워두고 똑같은 코드의 form.html 하나로 통일하면 됨
 
-```html
+```django
 {% extends 'base.html' %}
 {% load bootstrap5 %}
 {% block content %}
