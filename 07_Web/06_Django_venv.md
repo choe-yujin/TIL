@@ -280,10 +280,15 @@ else경우 에러 메세지까지 포매팅 되어 사용자UI에 출력된다.
 
 
 
-#### # new와 create 함수 합치기(글쓰기화면/저장/반려)
+### REST API 제대로 설계하기 
+
+#### new와 create 함수 합치기(글쓰기화면/저장/반려)
+
 GET -> /blog/create/ -> if GET 글쓰기화면
 
 POST -> /blog/create/ -> elif POST 유효성검사 T저장/F반려
+
+**METHOD(GET, POST, PUT, DELETE) / URL**
 
 ```python
 def create(request):
