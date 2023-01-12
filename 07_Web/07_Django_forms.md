@@ -20,11 +20,11 @@
 
 `ctrl + shift + p` `Select Interpreter` venv선택 후 터미널 재시작
 
-`pip install django==3.2.16 django_extensions`
+`pip install django==3.2.16 django_extensions`(extensions는 옵션)
 
 `pip list`
 
-`pip freeze > requirements.txt`
+`pip freeze > requirements.txt` (>는 덮어쓰기, >>는 append)
 
 `django-admin startproject form .`
 
@@ -36,6 +36,8 @@
 
 - TEMPLATES [ BASE_DIR / 'templates', ]
 - INSTALLED_APPS = [ 'django_extensions', 'classroom']
+
+`python manage.py shell_plus` (엑셀이 가진 함수 추가)
 
 `mkdir templates`
 
@@ -99,7 +101,7 @@ class StudentForm(forms.ModelForm):
 
     class Meta:  # 이 클래스의 메타 데이터 저장용
         model = Student
-        fields = '__all__'  # 모든 필드를 다 등록하겠다. 
+        fields = '__all__'  # 모든 필드를 다 등록하겠다.(auto빼고)
 ```
 
 
