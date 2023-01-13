@@ -408,8 +408,6 @@ POST방식으로 form 제출해서 오류났음-> DB전송하는게 아니라 �
 @require_http_methods(['GET', 'POST'])
 def update_article(request, article_pk):
     article = get_object_or_404(Article, pk=article_pk)
-    print(article.content)
-    print(article.title)
     if request.method == 'POST':
         form = ArticleForm(request.POST, instance=article)
         if form.is_valid():
