@@ -804,14 +804,14 @@ def article_detail(request, article_pk):
 
 
 
-![image-20230117152318971](C:\Users\a\TIL\07_Web\11_Django_Many.assets\image-20230117152318971.png)
+![image-20230117152318971](https://github.com/choe-yujin/TIL/blob/master/07_Web/11_Django_Many.assets/image-20230117152318971.png)
 
 ```django
 {{article.comments.count}} 아티클이 댓글 부를때 comments라 부르기로 했으니. 그 댓글들 수.
 {{article.like_users.count}} 아티클을 좋아하는 사용자 수(Article의 필드명 like_users)
 ```
 
-![image-20230117152327308](C:\Users\a\TIL\07_Web\11_Django_Many.assets\image-20230117152327308.png)
+![image-20230117152327308](https://github.com/choe-yujin/TIL/blob/master/07_Web/11_Django_Many.assets/image-20230117152327308.png)
 
 
 
@@ -838,7 +838,7 @@ comments와 like_users로 이름 바꿔주기.
 
 Article에 가상의 like_cnt컬럼(좋아요 테이블에서 cnt) 기준으로 내림차순,오름차순해야한다.
 
-![image-20230117153709708](C:\Users\a\TIL\07_Web\11_Django_Many.assets\image-20230117153709708.png)
+![image-20230117153709708](https://github.com/choe-yujin/TIL/blob/master/07_Web/11_Django_Many.assets/image-20230117153709708.png)
 
 annotate는 주석을 의미함.
 
@@ -855,7 +855,7 @@ def article_index(request):
     articles = Article.objects.annotate(like_count=Count('like_users')).order_by('-like_count')
 ```
 
-![image-20230117154527171](C:\Users\a\TIL\07_Web\11_Django_Many.assets\image-20230117154527171.png)
+![image-20230117154527171](https://github.com/choe-yujin/TIL/blob/master/07_Web/11_Django_Many.assets/image-20230117154527171.png)
 
 ```python
 # 실험
@@ -866,7 +866,7 @@ for a in Article.objects.annotate(like_count=Count('like_users')):
 
 SQL로 보면 이런 쿼리임.
 
-![image-20230117154246081](C:\Users\a\TIL\07_Web\11_Django_Many.assets\image-20230117154246081.png)
+![image-20230117154246081](https://github.com/choe-yujin/TIL/blob/master/07_Web/11_Django_Many.assets/image-20230117154246081.png)
 
 
 
