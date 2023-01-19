@@ -416,7 +416,7 @@ by-
 
 - 100명_ 클라이언트를 분리. Website,MobileApp - API - DB
 
-![image-20230118155702485](C:\Users\a\TIL\07_Web\12_Django_ManyToMany_like2.assets\image-20230118155702485.png)
+![image-20230118155702485](https://github.com/choe-yujin/TIL/blob/master/07_Web/12_Django_Follow.assets/image-20230118155702485.png)
 
 (우리는 장고 안에서 전부 해결했으나, 나중엔 템플릿(프론트엔드)을 따로 떼어내고, 장고의 View,Model(백엔드)에서 Model을 떼어내고)
 
@@ -424,20 +424,20 @@ ex) TMDB의API TMDB는 영화 데이터 다 갖고 있는데 json딕셔너리 �
 
 API한번 프로그래밍해서 Website랑 MobileApp에 보여줌
 
-![image-20230118160427516](C:\Users\a\TIL\07_Web\12_Django_ManyToMany_like2.assets\image-20230118160427516.png)
+![image-20230118160427516](https://github.com/choe-yujin/TIL/blob/master/07_Web/12_Django_Follow.assets/image-20230118160427516.png)
 
 
 
 - 1000명_로드 밸런서 추가. 외로운 API인스턴스 장고가  views.py가 딱 하나인데 모든 트래픽 요청을 혼자 견딜 수 없다. 장고가 *n이 되어야 한다. 수평적 확장. 동일한 코드를 실행하는 서버를 더 추가하여 처리할 수 있는 요청량 증가. 로드밸런서는 트래픽이 가장 적은 인스턴스로 요청을 라우팅한다.(Heroku)
 
-![image-20230118155936118](C:\Users\a\TIL\07_Web\12_Django_ManyToMany_like2.assets\image-20230118155936118.png)
+![image-20230118155936118](https://github.com/choe-yujin/TIL/blob/master/07_Web/12_Django_Follow.assets/image-20230118155936118.png)
 
 
 
 - 1만명_CDN(클라우드 스토리지 서비스) API는 이미지 및 이미지 업로드같은 작업을 처리하지 않게 한다. 주요데이터센터-한국. 이미지 요청오면 한국 데이터센터에 사본 저장. 한국요청자한테는 다음에 이 사본 보내줌.
 - 10만명_ 데이터 계층 확장. 최종적으로는 DB도 쪼개질거다. 관계형 데이터베이스 시스템(PostgreSQL, MySQL등) 시스템에 캐시 계층 도입. 서비스가 동일한 정보에 대해 DB를 반복적으로 많이 호출할 때 캐시가 유용하다. DB를 다시 만질 필요 없어지면서 DB에 부하가 걸리지 않는다. select문 읽기전용 복제본.
 
-![image-20230118155959790](C:\Users\a\TIL\07_Web\12_Django_ManyToMany_like2.assets\image-20230118155959790.png)
+![image-20230118155959790](https://github.com/choe-yujin/TIL/blob/master/07_Web/12_Django_Follow.assets/image-20230118155959790.png)
 
 
 
@@ -499,7 +499,7 @@ setting.py에
 
 BASE_DIR 추가해주면 static폴더 이름 붙은건 다 뒤짐.
 
-![image-20230118174324209](C:\Users\a\TIL\07_Web\12_Django_Follow.assets\image-20230118174324209.png)
+![image-20230118174324209](https://github.com/choe-yujin/TIL/blob/master/07_Web/12_Django_Follow.assets/image-20230118174324209.png)
 
 ```django
 <link rel="stylesheet" href="{% static 'css/base.css' %}">
