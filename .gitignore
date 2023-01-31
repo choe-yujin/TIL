@@ -118,6 +118,7 @@ ipython_config.py
 #   Similar to Pipfile.lock, it isVG
 
 #DataSet
+dataset/
 spaceship-titanic/
 titanic/
 lol_data/
